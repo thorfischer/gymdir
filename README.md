@@ -1,2 +1,2 @@
 # gymdir
-[Imgur](https://imgur.com/R0hCJtM)
+![](https://iili.io/2oLmPa.gif)
