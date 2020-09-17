@@ -1,2 +1,2 @@
 # gymdir
-<img src="/gymdir-iron.gif?raw=true" width="800px">
+<img src="/gymdir-iron.gif?raw=true" width="1280px">
