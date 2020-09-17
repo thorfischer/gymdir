@@ -1,0 +1,82 @@
+/*****************************************************************************/
+/* ListGymnasts: Style */
+/*****************************************************************************/
+.list-gymnasts {
+}
+.top-header {
+	text-align: center;
+}
+#gym_name {
+	background-color: rgba(128,128,128,0.2);
+}
+#gym_noc {
+	background-color: rgba(128,128,0,0.2);
+}
+#gym_comp {
+	background-color: rgba(128,128,128,0.2);
+}
+#gym_fx {
+	background-color: rgba(253,116,0,0.5);
+}
+#gym_ph {
+	background-color: rgba(255,225,26,0.5);
+}
+#gym_sr {
+	background-color: rgba(1,162,166,0.5);
+}
+#gym_vt {
+	background-color: rgba(189,242,113,0.5)
+}
+#gym_pb {
+	background-color: rgba(157,189,198,0.5);
+}
+#gym_hb {
+	background-color: rgba(151,104,209,0.5);
+}
+#gym_aa {
+	background-color: rgba(255,255,166,0.5);
+}
+.gym_lname {
+	text-transform: uppercase;
+	font-weight: 500;
+	word-wrap: break-word;
+	max-width: 132px;
+}
+input[type=number] {
+	width:64px !important;
+}
+td {
+	vertical-align: middle !important;
+}
+/*
+NOC Column
+*/
+body > div.container > div.list-gymnasts > table > tbody > tr > td:nth-child(3) {
+	padding: 2px;
+	font-size: 10px;
+	text-align: center;
+}
+/*
+Comp Name Column
+*/
+body > div.container > div.list-gymnasts > table > tbody > tr > td:nth-child(4) {
+	padding: 2px;
+	font-size: 12px;
+	text-align: center;
+}
+/*
+Comp Type Column
+*/
+body > div.container > div.list-gymnasts > table > tbody > tr > td:nth-child(5) {
+	padding: 2px;
+	font-size: 10px;
+	text-align: center;
+}
+/*
+Comp Date Column
+*/
+body > div.container > div.list-gymnasts > table > tbody > tr > td:nth-child(6) {
+	padding: 4px;
+	font-size: 10px;
+	text-align: center;
+}

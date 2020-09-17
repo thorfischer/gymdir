@@ -1,0 +1,119 @@
+<template name="quickForm_bs-inline-new">
+  {{#autoForm qfAutoFormContext}}
+    <!-- {{> afQuickFields quickFieldsAtts}}
+    <hr> -->
+    {{> afQuickField name="lname" label-class="sr-only"}}
+    {{> afQuickField name="fname" label-class="sr-only"}}
+    {{> afQuickField name="noc" label-class="sr-only"}}
+    {{> afQuickField name="comp" options="allowed" firstOption="(Competition)" label-class="sr-only"}}
+    {{> afQuickField name="comptype" options="allowed" firstOption="(Comp. Type)" label-class="sr-only"}}
+		{{> afQuickField name="compdate" label-class="sr-only"}}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="panel-title">
+					Scores
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Floor</h3>
+					</div>
+					<div class="panel-body">
+						{{> afQuickFields name="scores.fx" placeholder=null}}
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Pommel Horse</h3>
+					</div>
+					<div class="panel-body">
+						{{> afQuickFields name="scores.ph" placeholder=null}}
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Rings</h3>
+					</div>
+					<div class="panel-body">
+						{{> afQuickFields name="scores.sr" placeholder=null}}
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Vault</h3>
+					</div>
+					<div class="panel-body">
+						{{#if afFieldValueIs name="comptype" value="CIII"}}
+							{{> afQuickField name="scores.vt.d1" placeholder=null}}
+							{{> afQuickField name="scores.vt.e1" placeholder=null}}
+							{{> afQuickField name="scores.vt.pen1" options="allowed"}}
+							{{> afQuickField name="scores.vt.total1" placeholder=null}}
+							<br>
+							{{> afQuickField name="scores.vt.d2" placeholder=null}}
+							{{> afQuickField name="scores.vt.e2" placeholder=null}}
+							{{> afQuickField name="scores.vt.pen2" options="allowed"}}
+							{{> afQuickField name="scores.vt.total2" placeholder=null}}
+							<br>
+							{{> afQuickField name="scores.vt.totalf" placeholder=null}}
+							{{> afQuickField name="scores.vt.video" placeholder=null}}
+						{{else}}
+							{{> afQuickField name="scores.vt.d" placeholder=null}}
+							{{> afQuickField name="scores.vt.e" placeholder=null}}
+							{{> afQuickField name="scores.vt.pen" options="allowed"}}
+							{{> afQuickField name="scores.vt.total" placeholder=null}}
+							{{> afQuickField name="scores.vt.video" placeholder=null}}
+						{{/if}}
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Parallel Bars</h3>
+					</div>
+					<div class="panel-body">
+						{{> afQuickFields name="scores.pb" placeholder=null}}
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Horizontal Bar</h3>
+					</div>
+					<div class="panel-body">
+						{{> afQuickFields name="scores.hb" placeholder=null}}
+					</div>
+				</div>
+				{{#if afFieldValueIs name="comptype" value="CII"}}
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">All-Around</h3>
+						</div>
+						<div class="panel-body">
+							{{> afQuickFields name="scores.aa" placeholder=null}}
+						</div>
+					</div>
+				{{/if}}
+			</div>
+		</div>
+		
+		
+    {{#if qfShouldRenderButton}}
+    <button type="submit" {{submitButtonAtts}}>
+    {{#with ../atts.buttonContent}}
+    {{this}}
+    {{else}}
+    Submit
+    {{/with}}
+    </button>
+    {{/if}}
+  {{/autoForm}}
+</template>
+
+<template name="afFormGroup_bs-inline-new">
+  <div class="form-group {{#if afFieldIsInvalid name=this.name}}has-error{{/if}} {{afFormGroupClass}}" data-required={{required}} {{afFormGroupAtts}}>
+    {{#unless skipLabel}}
+    <label {{afFieldLabelAtts}}>{{#if this.labelText}}{{this.labelText}}{{else}}{{afFieldLabelText name=this.name}}{{/if}}</label>
+    {{/unless}}
+    {{> afFieldInput afFieldInputAtts}}
+    <span class="help-block">{{{afFieldMessage name=this.name}}}</span>
+  </div>
+</template>

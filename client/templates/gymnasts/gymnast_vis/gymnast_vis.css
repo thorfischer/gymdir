@@ -1,0 +1,21 @@
+/*****************************************************************************/
+/* GymnastVis: Style */
+/*****************************************************************************/
+.gymnast-vis {
+}
+#lineChartTest .axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+#lineChartTest .x.axis path {
+	display: none;
+}
+#lineChartTest .line {
+	fill: none;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
+#lineChartTest .bar {
+	fill: steelblue;
+}

@@ -1,0 +1,8 @@
+<template name="EditGymnast">
+  <div class="edit-gymnast">
+    <h1>Edit</h1>
+    {{> quickForm collection="Gymnasts" doc=this id="editGymnastForm" type="update" buttonContent="Update"}}
+    <hr>
+  	{{> quickRemoveButton collection="Gymnasts" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}
+  </div>
+</template>

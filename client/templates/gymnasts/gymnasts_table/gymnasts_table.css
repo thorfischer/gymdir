@@ -1,0 +1,40 @@
+/*****************************************************************************/
+/* GymnastsTable: Style */
+/*****************************************************************************/
+.gymnasts-table {
+}
+/*
+VT1 D
+*/
+#DataTables_Table_0 > thead > tr > th:nth-child(13),
+#DataTables_Table_0 > tbody > tr > td:nth-child(13) {
+	background-color: rgba(0,163,136,0.2);
+}
+/*
+VT1 Total
+*/
+#DataTables_Table_0 > thead > tr > th:nth-child(14),
+#DataTables_Table_0 > tbody > tr > td:nth-child(14) {
+	background-color: rgba(0,163,136,0.2);
+}
+/*
+VT2 D
+*/
+#DataTables_Table_0 > thead > tr > th:nth-child(15),
+#DataTables_Table_0 > tbody > tr > td:nth-child(15) {
+	background-color: rgba(0,163,136,0.2);
+}
+/*
+VT2 Total
+*/
+#DataTables_Table_0 > thead > tr > th:nth-child(16),
+#DataTables_Table_0 > tbody > tr > td:nth-child(16) {
+	background-color: rgba(0,163,136,0.2);
+}
+/*
+VT Total [CIII]
+*/
+#DataTables_Table_0 > thead > tr > th:nth-child(19),
+#DataTables_Table_0 > tbody > tr > td:nth-child(19) {
+	background-color: rgba(0,163,136,0.2);
+}

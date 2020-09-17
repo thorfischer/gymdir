@@ -1,0 +1,112 @@
+<template name="ListGymnasts">
+  <div class="list-gymnasts">
+    <h1>Gymnasts List</h1>
+		{{#afModal template="bootstrap3-inline" dialogClass="modal-lg" labelClass="sr-only" class="btn btn-success" collection="Gymnasts" placeholder=true operation="insert"}}
+			Add
+		{{/afModal}}
+		<hr>
+	  <table class="table table-hover table-bordered">
+	    <thead>
+	    	<tr>
+	    		<th class="top-header" colspan=2>Name</th>
+	    		<th class="top-header" colspan=1> </th>
+	    		<th class="top-header" colspan=3>Competition</th>
+	    		<!-- <th class="top-header" colspan=4 style="background-color: #FD7400;">FX</th> -->
+	    		<th class="top-header" colspan=3 style="background-color: #FD7400;">FX</th>
+	    		<th class="top-header" colspan=3 style="background-color: #FFE11A;">PH</th>
+	    		<th class="top-header" colspan=3 style="background-color: #01A2A6;">SR</th>
+	    		<!-- <th class="top-header" colspan=4 style="background-color: #BDF271;">VT</th> -->
+	    		<th class="top-header" colspan=3 style="background-color: #BDF271;">VT</th>
+	    		<th class="top-header" colspan=3 style="background-color: #9DBDC6;">PB</th>
+	    		<th class="top-header" colspan=3 style="background-color: #9768D1;">HB</th>
+	    		<th class="top-header" colspan=2 style="background-color: #FFFFA6;">AA</th>
+	    		<th class="top-header" colspan=1> </th>
+	    	</tr>
+	      <tr>
+	        <th id="gym_name">Last</th>
+	        <th id="gym_name">First</th>
+	        <th id="gym_noc">NOC</th>
+	        <th id="gym_comp">Name</th>
+	        <th id="gym_comp">Type</th>
+	        <th id="gym_comp">Date</th>
+	        <th id="gym_fx">D</th>
+	        <th id="gym_fx">E</th>
+	        <!-- <th id="gym_fx">Pen.</th> -->
+	        <th id="gym_fx">Total</th>
+	        <th id="gym_ph">D</th>
+	        <th id="gym_ph">E</th>
+	        <th id="gym_ph">Total</th>
+	        <th id="gym_sr">D</th>
+	        <th id="gym_sr">E</th>
+	        <th id="gym_sr">Total</th>
+	        <th id="gym_vt">D</th>
+	        <th id="gym_vt">E</th>
+	        <!-- <th id="gym_vt">Pen.</th> -->
+	        <th id="gym_vt">Total</th>
+	        <th id="gym_pb">D</th>
+	        <th id="gym_pb">E</th>
+	        <th id="gym_pb">Total</th>
+	        <th id="gym_hb">D</th>
+	        <th id="gym_hb">E</th>
+	        <th id="gym_hb">Total</th>
+	        <th id="gym_aa">D</th>
+	        <th id="gym_aa">Total</th>
+	        <th>Edit</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      {{#each gymnasts}}
+	        <tr>
+	          <td class="gym_lname">{{lname}}</td>
+	          <td>{{fname}}</td>
+	          <td>{{noc}}</td>
+	          <td>{{comp}}</td>
+	          <td>{{comptype}}</td>
+	          <td>{{formatDate compdate}}</td>
+	          <td style="background-color: rgba(253,116,0,0.3);">{{scores.fx.d}}</td>
+	          <td style="background-color: rgba(253,116,0,0.3);">{{scores.fx.e}}</td>
+	          <!-- <td style="background-color: rgba(253,116,0,0.3);">{{scores.fx.pen}}</td> -->
+	          <td style="background-color: rgba(253,116,0,0.3);font-weight: 700;">{{scores.fx.total}} {{#if scores.fx.video}}<a href="{{scores.fx.video}}" style="float:right;"><span class="glyphicon glyphicon-film"></span></a>{{/if}}</td>
+	          <td style="background-color: rgba(255,225,26,0.3);">{{scores.ph.d}}</td>
+	          <td style="background-color: rgba(255,225,26,0.3);">{{scores.ph.e}}</td>
+	          <td style="background-color: rgba(255,225,26,0.3);font-weight: 700;">{{scores.ph.total}} {{#if scores.ph.video}}<a href="{{scores.ph.video}}" style="float:right;"><span class="glyphicon glyphicon-film"></span></a>{{/if}}</td>
+	          <td style="background-color: rgba(1,162,166,0.3);">{{scores.sr.d}}</td>
+	          <td style="background-color: rgba(1,162,166,0.3);">{{scores.sr.e}}</td>
+	          <td style="background-color: rgba(1,162,166,0.3);font-weight: 700;">{{scores.sr.total}} {{#if scores.sr.video}}<a href="{{scores.sr.video}}" style="float:right;"><span class="glyphicon glyphicon-film"></span></a>{{/if}}</td>
+	          <td style="background-color: rgba(189,242,113,0.3);">{{scores.vt.d}} {{#if scores.vt.d1}} 1: {{scores.vt.d1}} <br> {{/if}} {{#if scores.vt.d2}} 2: {{scores.vt.d2}} {{/if}}</td>
+	          <td style="background-color: rgba(189,242,113,0.3);">{{scores.vt.e}} {{#if scores.vt.e1}} 1: {{scores.vt.e1}} <br> {{/if}} {{#if scores.vt.e2}} 2: {{scores.vt.e2}} {{/if}}</td>
+	          <!-- <td style="background-color: rgba(189,242,113,0.3);">{{scores.vt.pen}}</td> -->
+	          <td style="background-color: rgba(189,242,113,0.3);font-weight: 700;">
+	          	{{scores.vt.total}} 
+	          	{{#if scores.vt.total1}}1:  {{scores.vt.total1}} <br> {{/if}} {{#if scores.vt.total2}}2: {{scores.vt.total2}}{{/if}} {{#if scores.vt.totalf}}<span style="float:right;"> {{scores.vt.totalf}}</span> {{/if}} 
+	          	{{#if scores.vt.video}}
+	          	<a href="{{scores.vt.video}}" style="float:right;padding-right:2px;"><span class="glyphicon glyphicon-film"></span></a>
+	          	{{/if}}
+	          </td>
+	          <td style="background-color: rgba(157,189,198,0.3);">{{scores.pb.d}}</td>
+	          <td style="background-color: rgba(157,189,198,0.3);">{{scores.pb.e}}</td>
+	          <td style="background-color: rgba(157,189,198,0.3);font-weight: 700;">{{scores.pb.total}} {{#if scores.pb.video}}<a href="{{scores.pb.video}}" style="float:right;"><span class="glyphicon glyphicon-film"></span></a>{{/if}}</td>
+	          <td style="background-color: rgba(151,104,209,0.3);">{{scores.hb.d}}</td>
+	          <td style="background-color: rgba(151,104,209,0.3);">{{scores.hb.e}}</td>
+	          <td style="background-color: rgba(151,104,209,0.3);font-weight: 700;">{{scores.hb.total}} {{#if scores.hb.video}}<a href="{{scores.hb.video}}" style="float:right;"><span class="glyphicon glyphicon-film"></span></a>{{/if}}</td>
+	          <td style="background-color: rgba(255,255,166,0.3);">{{scores.aa.d}}</td>
+	          <td style="background-color: rgba(255,255,166,0.3);font-weight: 700;">{{scores.aa.total}}</td>
+	          <td>
+		          <!-- {{#linkTo route='editGymnast'}}
+		          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+		          {{/linkTo}}  -->
+		          {{#afModal class="glyphicon glyphicon-edit" template="bootstrap3-inline" collection="Gymnasts" operation="update" doc=_id}}
+	  						
+							{{/afModal}}
+							<span>  </span>
+							{{#afModal class="glyphicon glyphicon-remove" collection="Gymnasts" operation="remove" doc=_id}}
+							
+							{{/afModal}}
+						</td>
+	        </tr>
+	      {{/each}}
+	    </tbody>
+	  </table>
+  </div>
+</template>
+

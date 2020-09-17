@@ -1,0 +1,39 @@
+<template name="CreateGymnast">
+  <!-- <div class="create-gymnast"> -->
+    <h1>Create New Gymnast</h1>
+    {{> quickForm collection="Gymnasts" id="insertGymnastForm" type="insert" template="bs-inline-new" label-class="col-lg-12 sr-only" input-col-class="col-lg-12" afFieldInput-placeholder="schemaLabel" buttonContent="Create"}}
+    <!-- <h1>New Form</h1>
+    {{#autoForm collection="Gymnasts" id="insertGymnastFormNew" type="insert"}}
+    	<fieldset>
+    		<legend>Form</legend>
+    		{{> afQuickField name="lname"}}
+    		{{> afQuickField name="fname"}}
+    		{{> afQuickField name="noc"}}
+    		{{> afQuickField name="comp"}}
+    		{{> afQuickField name="comptype" options="allowed"}}
+    		{{> afQuickField name="compdate"}}
+    		
+    		<div class="form-group {{afFormGroupClass}}" data-required={{required}} {{afFormGroupAtts}}>
+    			
+    		</div>
+
+    		{{> afQuickFields name="scores.fx"}}
+    		{{#if afFieldValueIs name="comptype" value="CII"}}
+    			{{> afQuickField name="scores.vt.d1"}}
+    			{{> afQuickField name="scores.vt.e1"}}
+    			{{> afQuickField name="scores.vt.pen1"}}
+    			{{> afQuickField name="scores.vt.total1"}}
+    			{{> afQuickField name="scores.vt.d2"}}
+    			{{> afQuickField name="scores.vt.e2"}}
+    			{{> afQuickField name="scores.vt.pen2"}}
+    			{{> afQuickField name="scores.vt.total2"}}
+    		{{else}}
+    			{{> afQuickField name="scores.vt.d"}}
+    			{{> afQuickField name="scores.vt.e"}}
+    			{{> afQuickField name="scores.vt.pen"}}
+    			{{> afQuickField name="scores.vt.total"}}
+    		{{/if}}
+    	</fieldset>
+    {{/autoForm}} -->
+  <!-- </div> -->
+</template>

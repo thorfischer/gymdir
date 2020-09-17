@@ -1,0 +1,12 @@
+/*****************************************************************************/
+/* QuickFormBsInlineNew: Style */
+/*****************************************************************************/
+.btn.autoform-inline-align {
+  vertical-align: top;
+}
+input[name$=".video"] {
+	width: 480px !important;
+}
+input[name$=".total"] {
+	width: 84px !important;
+}
